@@ -28,16 +28,24 @@ class Employee {
 
 class EmployeeSalaryProcessing {
 
-	final void processSalary(final Employee employee) {
+	//case 1: although case 1 have not side effected in calling method but why to even allowe this think
+	final void processSalary( Employee employee) {
+		employee=null;
 		System.out.println("final method");
 	}
+	
+	//thats way u perfer to have final keyword here
+//	final void processSalary(final Employee employee) {
+//		employee=null;
+//		System.out.println("final method");
+//	}
 }
 
 public class NeedOfFinal {
 	public static void main(String[] args) {
 		
-		final Employee employee = new Employee(1, 10000);
-		employee=new Employee(1, 10000);
+//		final Employee employee = new Employee(1, 10000);
+//		employee=new Employee(1, 10000);
 		
 //		employee.printEmpDetails();
 //		employee.setSalary(employee.getSalary()*1.1);
