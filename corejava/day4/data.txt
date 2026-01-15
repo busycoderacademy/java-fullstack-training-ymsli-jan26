@@ -1,0 +1,10 @@
+1:9780134685991:Effective Java:Joshua Bloch:4500
+2:9780596009205:Head First Java:Kathy Sierra:3800
+3:9781617294945:Spring in Action:Craig Walls:4200
+4:9780132350884:Clean Code:Robert C. Martin:5000
+5:9781491950357:Designing Data-Intensive Applications:Martin Kleppmann:6500
+6:9780321125217:Domain-Driven Design:Eric Evans:5500
+7:9780134494166:Core Java Volume I:Cay S. Horstmann:4800
+8:9780135974445:Java Concurrency in Practice:Brian Goetz:5200
+9:9781787122147:Microservices Patterns:Chris Richardson:4600
+10:9780134177304:Effective Modern Java Lambdas:Raoul-Gabriel Urma:4100
