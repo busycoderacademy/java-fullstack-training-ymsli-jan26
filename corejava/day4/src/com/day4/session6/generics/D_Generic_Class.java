@@ -2,6 +2,28 @@ package com.day4.session6.generics;
 
 import java.lang.reflect.Array;
 
+class Bar<T extends Comparable<T>> {
+	T i;
+	T j;
+
+	public T getI() {
+		return i;
+	}
+
+	public void setI(T i) {
+		this.i = i;
+	}
+
+	public T getJ() {
+		return j;
+	}
+
+	public void setJ(T j) {
+		this.j = j;
+	}
+
+}
+
 class Foo<T> {
 	T i;
 
@@ -16,16 +38,19 @@ class Foo<T> {
 }
 //9958543978
 
+class UnderFlowEx extends RuntimeException {
+}
 
-class UnderFlowEx extends RuntimeException{}
-class OverFlowEx extends RuntimeException{}
+class OverFlowEx extends RuntimeException {
+}
+
 class Stack<T> {
 	private T x[];
 	private final int SIZE;
 	private int top;
 
 	public Stack(Class<T> clazz, int capacity) {
-		x = (T[])Array.newInstance(clazz, capacity);
+		x = (T[]) Array.newInstance(clazz, capacity);
 		SIZE = capacity;
 		top = -1;
 	}
@@ -39,7 +64,7 @@ class Stack<T> {
 
 	public T pop() {
 		if (top == -1)
-			 throw new UnderFlowEx();
+			throw new UnderFlowEx();
 		else
 			return x[top--];
 	}
@@ -55,16 +80,16 @@ public class D_Generic_Class {
 //		Stack<Integer> s=new Stack<>(Integer.class, 10);
 //		s.push(2);
 //		System.out.println(s.pop());
-		
+
 //		Stack<String> s=new Stack<>(String.class, 10);
 //		s.push("foo");
 //		System.out.println(s.pop());
-		
+
 //		Foo<String> foo=new Foo<>();
 //		foo.setI("foo");
 //		System.out.println(foo.getI());
 //		
-		
+
 //		Foo<Integer> foo=new Foo<>();
 //		foo.setI(3);
 //		System.out.println(foo.getI());

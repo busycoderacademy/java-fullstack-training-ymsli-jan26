@@ -7,6 +7,7 @@ import java.util.List;
 public class B_Extends_Super {
 
 	public static void main(String[] args) {
+		//
 		List<Integer> list = new LinkedList<>();
 		list.add(8);
 		list.add(19);
@@ -14,7 +15,7 @@ public class B_Extends_Super {
 		list.add(21);
 
 		print(list);
-
+		
 		List<Double> list2 = new LinkedList<>();
 		list2.add(8.9);
 		list2.add(19.7);
@@ -22,51 +23,38 @@ public class B_Extends_Super {
 		list2.add(21.0);
 
 		print(list2);
-		List<Float> list3 = new LinkedList<>();
-		list3.add(8.7f);
-		list3.add(19.7F);
 		
-		print(list3);
-		
-		List<NewDog> list4 = new LinkedList<>();
-		list4.add(new NewDog());
-		list4.add(new NewDog());
-		
-		print(list4);
+		List<Employee> employees = new LinkedList<>();
+
+        employees.add(new Employee(101, "Raj", 95000));
+        employees.add(new Employee(102, "Amit", 75000));
+        employees.add(new Employee(103, "Neha", 120000));
+        employees.add(new Employee(104, "Kiran", 85000));
+        
+        print(employees);
 
 	}
-	//<?> ===List<? extends Object> list
+	//hey compiler i can pass any list whose memember have something to do with Number 
+	//i promise u i will iterate and never change it
+	
 	private static void print(List<?> list) {
-		for (Object val : list) {
-			System.out.println(val);
+		//list.add(new Cat());
+		for (Object data : list) {
+			System.out.println(data);
 		}
 	}
 	
-//	private static void print(List<? extends Object> list) {
-//		for (Object val : list) {
-//			System.out.println(val);
-//		}
-//	}
 	
-//	private static void print(List<? extends Number> list) {
-//		for (Number val : list) {
-//			System.out.println(val);
-//		}
-//	}
+	
+	
+	
+//Erasure of method print(List<Double>) is the same as another method in type B_Extends_Super
+	//DRY algo datatype change ho raha hey 
+	
 
-//Erasure of method print(List<Integer>) is the same as
-	// another method in type B_Extends_Super
 
-//	//DRY
-//	private static void printInt(List<Integer> list) {
-//		for (Integer val : list) {
-//			System.out.println(val);
-//		}
-//	}
-//
-//	private static void printDouble(List<Double> list) {
-//		for (Double val : list) {
-//			System.out.println(val);
-//		}
-//	}
 }
+
+
+
+

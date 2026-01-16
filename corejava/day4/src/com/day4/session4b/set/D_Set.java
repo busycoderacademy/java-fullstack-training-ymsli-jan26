@@ -1,5 +1,7 @@
 package com.day4.session4b.set;
 
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
@@ -48,14 +50,29 @@ public class D_Set {
 
 		// Set dont allow duplicate
 		// HashSet, LinkedHashSet,TreeSet
-//		Set<String> set = new TreeSet<>();
+		
+		//Exception in thread "main" java.lang.ClassCastException:
+		
+		Set set = new HashSet();
+		set.add("umesh");
+		set.add(new StringBuilder("bar"));
+		System.out.println(set);
+
+		
+		
+		
+//		Set<String> set = new HashSet<>();
 //		set.add("umesh");
 //		set.add("foo");
 //		set.add("bar");
 //		set.add("foo");
 //		set.add("apple");
-//
-//		System.out.println(set);
+
+	//	System.out.println(set);
 	}
 
 }
+
+
+
+
