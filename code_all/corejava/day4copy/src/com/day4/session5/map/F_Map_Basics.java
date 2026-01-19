@@ -1,0 +1,33 @@
+package com.day4.session5.map;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class F_Map_Basics {
+
+	public static void main(String[] args) {
+		//Hashtable vs HashMap
+		Map<String, Integer> map = new HashMap<>();
+		map.put("ekta", 80);
+		map.put(null, 100);
+		map.put("raj", 84);
+		map.put("keshav", 90);
+		map.put("keshav", 99);
+
+		Set<Entry<String, Integer>> entrySet = map.entrySet();
+		for(Entry<String, Integer> entry: entrySet) {
+			System.out.println(entry.getKey()+": "+ entry.getValue());
+		}
+		
+//		Set<String>keys=map.keySet();
+//		for(String key: keys) {
+//			System.out.println(key+" : "+ map.get(key));
+//		}
+		
+		//System.out.println(map);
+
+		// how to print the map
+	}
+}
