@@ -1,6 +1,6 @@
-
+--------------------
 Java Persistance API
------------------
+--------------------
 
 	1. Hello World JPA
 	2. CRUD
@@ -64,17 +64,21 @@ mysql -u root -p
              https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
 	version="3.0">
 
-	<persistence-unit name="HR_PU"
-		transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="HR_PU" transaction-type="RESOURCE_LOCAL">
+	      <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<class>com.demo.Product</class>
  			<properties>
-	            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-	            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hibdemo"/>
+	            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+	            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ymsli26"/>
 	            <property name="javax.persistence.jdbc.user" value="root"/>
 	            <property name="javax.persistence.jdbc.password" value="root"/>
+	                        <property name="hibernate.dialect"
+                      value="org.hibernate.dialect.MySQL8Dialect"/>
 	            <property name="hibernate.hbm2ddl.auto" value="create"/>
 	            <property name = "hibernate.show_sql" value = "true" />
+	             <property name="hibernate.format_sql" value="true"/>
         </properties>
+		
 	</persistence-unit>
 </persistence>
 
@@ -451,8 +455,6 @@ public class Book {
 	enum BookType {
 		PHYSICS, CHEM, MATHS
 	}
-
-
 
 
 
@@ -997,12 +999,13 @@ Query API
 
 
 
+
 Maven dependences:
-----------------------
-<properties>
+------------------
+	<properties>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
-		 <hibernate.version>6.1.5.Final</hibernate.version>
+		<hibernate.version>6.1.5.Final</hibernate.version>
 	</properties>
 
 	<dependencies>
@@ -1028,10 +1031,9 @@ Maven dependences:
 		</dependency>
 
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.49</version>
-			<scope>compile</scope>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<version>8.3.0</version>
 		</dependency>
 
 		<dependency>
