@@ -3,8 +3,10 @@ package com.productapp.dao;
 import java.util.Arrays;
 import java.util.List;
 
-import com.productapp.dto.Product;
+import org.springframework.stereotype.Repository;
 
+import com.productapp.dto.Product;
+@Repository
 public class ProductDaoArrayListImpl implements ProductDao{
 	 @Override
 	    public List<Product> getAll() {

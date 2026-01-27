@@ -5,7 +5,30 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
-        //I
+      
+    	ApplicationContext ctx=new ClassPathXmlApplicationContext("demo.xml");
+    	
+    	Passanger passanger=(Passanger) ctx.getBean("p");
+
+    	passanger.travel();
+    	
+    	
+    	
+    	
+    	//Manual di
+//    	Vehicle vehicle=new Car();
+//    	
+//    	Passanger passanger=new Passanger();
+//    	
+//    	passanger.setName("ramu");
+//    	passanger.setVehicle(vehicle);
+//    	
+    	
+    	
+    	
+    	
+    	
+    	//I
       
     	
         //Spring framework can automized DI

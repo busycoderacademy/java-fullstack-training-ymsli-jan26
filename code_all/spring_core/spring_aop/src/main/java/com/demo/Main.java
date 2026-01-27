@@ -1,9 +1,17 @@
 package com.demo;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 public class Main {
 	public static void main(String[] args) {
 
-		Magician magician = new Magician();
+		ApplicationContext applicationContext
+		=new AnnotationConfigApplicationContext(AppConfig.class);
+		
+		Magician magician = (Magician) applicationContext.getBean("magician");
+		
+		System.out.println(magician.getClass());
 		String result = magician.doMagic();
 		System.out.println(result);
 

@@ -4,7 +4,9 @@ package com.demo;
 //OCP
 //Passanger is reposible for obtaining vehicle => pull
 public class Passanger {
+	
     private String name;
+    
     private Vehicle vehicle;
 
     public void setName(String name) {
