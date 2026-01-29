@@ -10,8 +10,7 @@ public class Main {
 		=new AnnotationConfigApplicationContext(AppConfig.class);
 		
 		Magician magician = (Magician) applicationContext.getBean("magician");
-		
-		System.out.println(magician.getClass());
+
 		String result = magician.doMagic();
 		System.out.println(result);
 

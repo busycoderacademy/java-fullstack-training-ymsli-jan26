@@ -6,12 +6,25 @@ import org.springframework.stereotype.Component;
 @Component
  public class Magician {
 
+	public String doEat() {
+		System.out.println("eating the food leav me along...");
+		delay();
+		return "rasgullla from luch box...";
+	}
+
+	
 	public String doMagic() {
 		System.out.println("abara ka dabra...");
-		if(1==1)
-			throw new MagicianHeartAttack("call dr now !");
-
+		delay();
 		return "rabbit from the Hat";
+	}
+
+	private void delay() {
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }
 
